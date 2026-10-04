@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codemorph"
+version = "0.1.0"
+description = "AST-Driven Stylometric Code Transpiler & Developer Signature Emulator"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Atharva", email = "atharva@example.com" }
+]
+keywords = ["ast", "compilers", "stylometry", "code-attribution", "transpiler"]
+dependencies = [
+    "rich>=13.0.0",
+    "typer>=0.9.0",
+    "pydantic>=2.0.0",
+    "google-genai>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+codemorph = "codemorph.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["codemorph*"]
